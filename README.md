@@ -1,1 +1,1 @@
-# HP-Gas-Self-Supervised-Recon
+# HP-Gas-MRI-Self-Supervised-Recon
