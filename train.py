@@ -184,7 +184,6 @@ def save_model(args, exp_dir, epoch, model, optimizer, best_eva_loss, is_new_bes
 
 def build_model(args):
     model = Unknown(layer_no=1, desired_sparsity=args.sparsity1,  flag_1D=False, mask_shape=[96, 96], acc=4, device=args.device).to(args.device)
-    #打印模型参数量，单位为M
     num_params = sum(p.numel() for p in model.parameters())
     print(f'Number of parameters: {num_params/1e6}M')
     return model
