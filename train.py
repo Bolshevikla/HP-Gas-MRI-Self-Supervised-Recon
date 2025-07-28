@@ -123,7 +123,7 @@ def train_epoch(args, epoch, model, epoch_iterator, optimizer, writer, criterion
 
         img_recon, mu, sigma, reconk, subk, mask_omega, mask_lambda, us_img, doubleus_img, recon_k, reg_loss = model(kspace)
 
-        #loss函数
+        #loss
         kl_loss = kl_divergence(mu, sigma)
         weight_loss = criterion2(reconk, subk) + criterion1(reconk, subk) + (1e-4)*kl_loss + (1e-4)*reg_loss
 
