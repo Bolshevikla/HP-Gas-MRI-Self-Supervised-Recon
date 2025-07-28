@@ -125,7 +125,7 @@ def train_epoch(args, epoch, model, epoch_iterator, optimizer, writer, criterion
 
         #loss
         kl_loss = kl_divergence(mu, sigma)
-        weight_loss = criterion2(reconk, subk) + criterion1(reconk, subk) + (1e-4)*kl_loss + (1e-4)*reg_loss
+        weight_loss = criterion2(reconk, subk) + criterion1(reconk, subk) + 10 * kl_loss + (5e-4)*reg_loss
 
         optimizer.zero_grad()
         weight_loss.backward()
@@ -159,7 +159,7 @@ def evaluate(args, epoch, model, epoch_iterator, writer, criterion1, criterion2)
         img_recon, mu, sigma, reconk, subk, mask_omega, mask_lambda, us_img, doubleus_img, recon_k, reg_loss = model(kspace)
 
         kl_loss = kl_divergence(mu, sigma)
-        weight_loss = criterion1(reconk, subk) + criterion2(reconk, subk) +  kl_loss + (1e-4)*reg_loss
+        weight_loss = criterion1(reconk, subk) + criterion2(reconk, subk) +  10 * kl_loss + (5e-4)*reg_loss
 
         losses.append(weight_loss.item())
         recon_losses.append(criterion2(recon_k, complex2real_b_troch(kspace)).item())
