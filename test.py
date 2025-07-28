@@ -76,7 +76,6 @@ def test_recon(args, model, data_loader):
         gt_img = (gt_img).cpu().numpy()
         us_img = real2complex_torch(us_img).cpu().numpy()
 
-        #计算指标
         norm_img_recon = metrics.normalized(np.abs(img_recon))
         norm_gt_img = metrics.normalized(np.abs(gt_img))
         norm_us_img = metrics.normalized(np.abs(us_img))
