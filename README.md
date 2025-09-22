@@ -10,7 +10,4 @@ Our adaptive method maintains comparable entropy (3.22), indicating balanced cov
 
 # Ventilation defect percentage
 To assess the potential clinical utility of the reconstructed images for lung function evaluation, ventilation defects were segmented from the pulmonary gas MR images, and the ventilation defect percentage (VDP) was calculated. In the segmentation results, red regions indicate ventilation defects, while green regions represent well-ventilated (normal) lung areas.
-![图片1](https://github.com/user-attachments/assets/fe6b274e-90f0-461f-b431-7b23a1c16994)
-
-
-
+<img width="2296" height="620" alt="VDP" src="https://github.com/user-attachments/assets/7e8d373d-5dfb-4227-9ff1-99cf97cc4e21" />
